@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Famous;
 use Illuminate\Http\Request;
+use SweetAlert;
 
 class FamousController extends Controller
 {
@@ -14,7 +15,8 @@ class FamousController extends Controller
      */
     public function index()
     {
-        //
+        $famouses=Famous::paginate(5);
+        return view('dashboard.famous',compact('famouses',$famouses));
     }
 
     /**
@@ -67,9 +69,13 @@ class FamousController extends Controller
      * @param  \App\Models\Famous  $famous
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Famous $famous)
+    public function update(Request $request,  $id)
     {
-        //
+        Famous::find($id)->update([
+            'status' => $request->status
+        ]);
+        alert()->success('The Update was completed successfully.', 'Successfully');
+        return redirect()->back();
     }
 
     /**
@@ -78,8 +84,10 @@ class FamousController extends Controller
      * @param  \App\Models\Famous  $famous
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Famous $famous)
+    public function destroy( $id)
     {
-        //
+        Famous::find($id)->delete();
+        alert()->success('The deletion was completed successfully.', 'Successfully');
+        return redirect()->back();
     }
 }

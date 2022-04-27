@@ -5,7 +5,7 @@
     <main class="app-content">
         <div class="app-title">
             <div>
-                <h1><i class="fa fa-th-list">Company</i></h1>
+                <h1><i class="fa fa-th-list">Bank</i></h1>
             </div>
             <ul class="app-breadcrumb breadcrumb side">
                 <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
@@ -13,81 +13,56 @@
                 <li class="breadcrumb-item active"><a href="#">Data Table</a></li>
             </ul>
         </div>
+        <p><a class="btn btn-primary icon-btn" href="{{route('admin.banks.create')}}"><i class="fa fa-plus"></i>Add Item	</a></p>
 
         <div class="row">
             <div class="col-md-12">
                 <div class="tile">
+                    
                     <div class="tile-body">
                         <div class="table-responsive">
                             <table class="table table-hover table-bordered" id="sampleTable">
                                 <thead>
                                     <tr>
-                                        <th> Store Name </th>
-                                        <th>Email</th>
-                                        <th>Phone Number</th>
-                                        <th>Username</th>
-                                        <th>Store Name</th>
-                                        <th>IBAN Bank</th>
-                                        <th>Status</th>
+                                        <th>  Name </th>
+                                        
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
 
-                                    @foreach ($companies as $company)
+                                    @foreach ($banks as $bank)
                                         <tr>
-                                            <td>{{ $company->store_owner }} </td>
+                                            <td>{{ $bank->name }} </td>
 
-                                            <td>{{ $company->email }}</td>
-                                            <td>{{ $company->phone }}</td>
-                                            <td>{{ $company->username }}</td>
-                                            <td>{{ $company->store_name }}</td>
-                                            <td>{{ $company->bank_IBAN }}</td>
-                                            <td>
-                                                @if ($company->status == 0)
-                                                    <span class="badge badge-danger">Not Aprove</span><span>
-                                                @elseif ($company->status == 1)
-                                                    <span class="badge badge-success">Aprove</span><span>
-                                                @elseif ($company->status == 2)
-                                                    <span class="badge badge-primary">Call done</span><span>
-                                                @elseif ($company->status == 3)
-                                                    <span class="badge badge-info">An appointment</span><span>
-                                                @else
-                                                    <span class="badge badge-warning">Contract Done</span><span>
-
-                                                @endif
-
-
-            
-                                            </td>
-
+                                           
 
                                         
                                             <td>
-                                                <div class="btn-group">
+                                                {{-- <div class="btn-group"> --}}
                                                     <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
-                                                        data-target="#exampleModaldelete{{ $company->id }}"
+                                                        data-target="#exampleModaldelete{{ $bank->id }}"
                                                         title=" حذف"><i class="fa fa-lg fa-trash"></i></button>
 
 
                                                     <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
-                                                        data-target="#exampleModalconvert{{ $company->id }}"
+                                                        data-target="#exampleModalconvert{{ $bank->id }}"
                                                         title=" تعديل ">
                                                         <i class="fa fa-lg fa-edit"></i> </button>
 
-                                                </div>
+                                                {{-- </div> --}}
 
                                             </td>
 
-                                            <div class="modal fade" id="exampleModaldelete{{ $company->id }}"
+                                            <div class="modal fade" id="exampleModaldelete{{ $bank->id }}"
                                                 tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                                                 aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-body">
                                                             <form
-                                                                action="{{ route('admin.companies.destroy', $company->id) }}"
+                                                                action="{{ route('admin.banks.destroy', $bank->id) }}"
                                                                 method="post">
                                                                 @method('delete')
                                                                 @csrf
@@ -113,14 +88,14 @@
                                             </div>
 
 
-                                            <div class="modal fade" id="exampleModalconvert{{ $company->id }}"
+                                            <div class="modal fade" id="exampleModalconvert{{ $bank->id }}"
                                                 tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                                                 aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                                     <div class="modal-content">
                       
                                                         <div class="modal-body">
-                                                            <form action="{{route('admin.companies.update',$company->id)}}"
+                                                            <form action="{{route('admin.banks.update',$bank->id)}}"
                                                                 method="post">
                                                                 @method('put')
                       
@@ -130,11 +105,11 @@
                                                                 <br>
                                                                 <div class="form-group">
                                                                     <select class="form-control" name="status" id="exampleSelect1">
-                                                                      <option value="0" @if ($company->status  == 0) selected @endif>Not aprove</option>
-                                                                      <option value="1"  @if ($company->status  == 1) selected @endif>Aprove</option>
-                                                                      <option value="2"  @if ($company->status  == 2) selected @endif>Call done </option>
-                                                                      <option value="3"  @if ($company->status  == 3) selected @endif>An appointment</option>
-                                                                      <option value="4"  @if ($company->status  == 4) selected @endif>Contract Done</option>
+                                                                      <option value="0" @if ($bank->status  == 0) selected @endif>Not aprove</option>
+                                                                      <option value="1"  @if ($bank->status  == 1) selected @endif>Aprove</option>
+                                                                      <option value="2"  @if ($bank->status  == 2) selected @endif>Call done </option>
+                                                                      <option value="3"  @if ($bank->status  == 3) selected @endif>An appointment</option>
+                                                                      <option value="4"  @if ($bank->status  == 4) selected @endif>Contract Done</option>
                                                                     </select>
                                                                   </div>
                       
@@ -164,7 +139,7 @@
 
                                 <div class="col-md-7 col-sm-7">
                                     <div class="dataTables_paginate paging_bootstrap_full_number" id="sample_1_paginate">
-                                        {{ $companies->links('pagination::bootstrap-4') }}
+                                        {{ $banks->links('pagination::bootstrap-4') }}
                                     </div>
                                 </div>
                             </div>

@@ -3,6 +3,7 @@
 
 <head>
     @include('dashboard.include.head')
+    @stack('plugin-styles')
 
 </head>
 
@@ -13,9 +14,13 @@
     </header>
     <!-- Sidebar menu-->
     @include('dashboard.include.sidebar')
+    @include('sweet::alert')
+
     @yield('content')
     <!-- Essential javascripts for application to work-->
     @include('dashboard.include.footer')
+    @stack('custom-scripts')
+
 </body>
 
 </html>

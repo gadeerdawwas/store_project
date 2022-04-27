@@ -1,9 +1,12 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BankController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FamousController;
 use App\Http\Controllers\HomeController;
+use App\Models\Famous;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,4 +35,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::prefix('admin')->name('admin.')->group(function(){
     Route::get('/',[DashboardController::class,'index'])->name('index');
     Route::resource('companies',CompanyController::class);
+    Route::resource('famouses',FamousController::class);
+    Route::resource('banks',BankController::class);
 });

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Company;
 use Illuminate\Http\Request;
+use SweetAlert;
 
 class CompanyController extends Controller
 {
@@ -69,9 +70,13 @@ class CompanyController extends Controller
      * @param  \App\Models\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Company $company)
+    public function update(Request $request,  $id)
     {
-        //
+        Company::find($id)->update([
+            'status' => $request->status
+        ]);
+        alert()->success('The Update was completed successfully.', 'Successfully');
+        return redirect()->back();
     }
 
     /**
@@ -80,8 +85,10 @@ class CompanyController extends Controller
      * @param  \App\Models\Company  $company
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Company $company)
+    public function destroy( $id)
     {
-        //
+        Company::find($id)->delete();
+        alert()->success('The deletion was completed successfully.', 'Successfully');
+        return redirect()->back();
     }
 }

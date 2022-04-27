@@ -16,18 +16,18 @@
 
     <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-user"></i><span class="app-menu__label">Famous Registered</span><i class="treeview-indicator fa fa-angle-right"></i></a>
       <ul class="treeview-menu">
-        <li><a class="treeview-item" href="famous.html"><i class="icon fa fa-circle-o"></i> Famous Registered</a></li>
+        <li><a class="treeview-item" href="{{route('admin.famouses.index')}}"><i class="icon fa fa-circle-o"></i> Famous Registered</a></li>
   
       </ul>
     </li>
 
-    <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i
+    <li class="treeview"><a class="app-menu__item" href="{{route('admin.banks.index')}}" data-toggle="treeview"><i
       class="app-menu__icon fa fa-money"></i><span class="app-menu__label">Bank List</span><i
       class="treeview-indicator fa fa-angle-right"></i></a>
 
 
   <ul class="treeview-menu">
-    <li><a class="treeview-item" href="BankList.html"><i class="icon fa fa-circle-o"></i> Bank List Name</a></li>
+    <li><a class="treeview-item" href="{{route('admin.banks.index')}}"><i class="icon fa fa-circle-o"></i> Bank List Name</a></li>
 
   </ul>
 </li>

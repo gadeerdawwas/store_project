@@ -14,7 +14,8 @@ class BankController extends Controller
      */
     public function index()
     {
-        //
+        $banks=Bank::paginate(5);
+        return view('dashboard.BankList',compact('banks',$banks));
     }
 
     /**
@@ -24,7 +25,7 @@ class BankController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.BankForm');
     }
 
     /**
@@ -35,7 +36,23 @@ class BankController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = validator($request->all(),[
+            'name'=> ['required', 'unique:banks'],
+        ]);
+
+
+        if (! $validator->fails() ) {
+            Bank::create([
+                'name' => $request->name
+            ]);
+            alert()->success('The Addition completed successfully.', 'Successfully');
+            return redirect()->back();
+           
+        }else{
+            alert()->error('The add operation failed. ' ,'Failed');
+            return redirect()->back();
+
+        }
     }
 
     /**
@@ -78,8 +95,10 @@ class BankController extends Controller
      * @param  \App\Models\Bank  $bank
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Bank $bank)
+    public function destroy( $id)
     {
-        //
+        Bank::find($id)->delete();
+        alert()->success('The deletion was completed successfully.', 'Successfully');
+        return redirect()->back();
     }
 }

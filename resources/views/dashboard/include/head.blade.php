@@ -14,3 +14,4 @@
 <link rel="stylesheet" type="text/css" href="{{asset('dashboard/css/main.css')}}">
 <!-- Font-icon css-->
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
