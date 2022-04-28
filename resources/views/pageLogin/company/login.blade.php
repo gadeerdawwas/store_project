@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="{{ asset('auth/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}"
         type="text/css">
     <!-- Argon CSS -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <link rel="stylesheet" href="{{ asset('auth/css/argon.css?v=1.2.0') }}" type="text/css">
 </head>
 
@@ -68,6 +70,7 @@
     <!-- Main content -->
     <div class="main-content">
         <!-- Header -->
+        @include('sweet::alert')
 
         <!-- Page content -->
         <div class="container mt--8 pb-5">

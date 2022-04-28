@@ -16,7 +16,7 @@
       <div class="widget-small primary coloured-icon"><i class="icon fa fa-users fa-3x"></i>
         <div class="info">
           <h4>Users Famous</h4>
-          <p><b>5</b></p>
+          <p><b>{{$companies}}</b></p>
         </div>
       </div>
     </div>
@@ -24,7 +24,7 @@
       <div class="widget-small info coloured-icon"><i class="icon fa fa-thumbs-o-up fa-3x"></i>
         <div class="info">
           <h4>Company</h4>
-          <p><b>25</b></p>
+          <p><b>{{$famoues}}</b></p>
         </div>
       </div>
     </div>

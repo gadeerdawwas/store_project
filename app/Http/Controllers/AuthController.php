@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Company;
+use App\Models\Bank;
 use App\Models\Famous;
+use App\Models\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
@@ -38,18 +40,29 @@ class AuthController extends Controller
                    'password' =>  Hash::make($request->password),
                    ]);
                 
-                   return redirect()->back()
-                   ->with('success', 'تمت عملية التسجيل بنجاح');;
+                $Company = $Company->toArray();
+        
+                Mail::send('mail', $Company, function($message) use ($Company) {
+                    $message->to($Company['email']);
+                    $message->subject('AKO');
+                });
+
+                alert()->success('تمت عملية التسجيل بنجاح.', 'تهانينا');
+                return redirect()->back();
+
+                
             } catch (\Throwable $th) {
-                return redirect()->back()
-                ->with('error', 'لم تتم عملية التسجيل');
+                 
+            alert()->error('لم تتم عملية التسجيل', 'للأسف');
+            return redirect()->back();
             }
     }
 
 
     public function famousregisters()
     {
-       return view('pageLogin.famous.register');
+        $banks=Bank::all();
+       return view('pageLogin.famous.register',compact('banks',$banks));
     }
     public function famousregister(Request $request)
     {
@@ -64,23 +77,40 @@ class AuthController extends Controller
             'twitter' => ['required', 'string'],
         ]);
         if (! $validator->fails()) {
-            Famous::create([
-                'first_name' => $request->first_name,
-                'last_name' => $request->last_name,
-                'email' => $request->email,
-                'phone' => $request->phone,
-                'bank_IBAN' => $request->bank_IBAN,
-                'bank_name' => $request->bank_name,
-                'instagram' => $request->instagram,
-                'facebook' => $request->facebook,
-                'twitter' => $request->twitter,
-                'password' => Hash::make($request->password),
-            ]);
-            return redirect()->back()
-            ->with('success', 'تمت عملية التسجيل بنجاح');
+            try {
+                $Famous=Famous::create([
+                    'first_name' => $request->first_name,
+                    'last_name' => $request->last_name,
+                    'email' => $request->email,
+                    'phone' => $request->phone,
+                    'bank_IBAN' => $request->bank_IBAN,
+                    'bank_name' => $request->bank_name,
+                    'instagram' => $request->instagram,
+                    'facebook' => $request->facebook,
+                    'twitter' => $request->twitter,
+                    'password' => Hash::make($request->password),
+                ]);
+                  
+                $Famous = $Famous->toArray();
+        
+                Mail::send('mail', $Famous, function($message) use ($Famous) {
+                    $message->to($Famous['email']);
+                    $message->subject('AKO');
+                });
+    
+                alert()->success('تمت عملية التسجيل بنجاح.', 'تهانينا');
+                return redirect()->back();
+            } catch (\Throwable $th) {
+                return $th;
+            alert()->error('لم تتم عملية التسجيل', 'للأسف');
+            return redirect()->back();
+            }
+            
+           
         }else{
-            return redirect()->back()
-                ->with('error', 'لم تتم عملية التسجيل');
+          
+            alert()->error('لم تتم عملية التسجيل', 'للأسف');
+            return redirect()->back();
         }
     }
 }

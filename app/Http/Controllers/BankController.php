@@ -14,7 +14,7 @@ class BankController extends Controller
      */
     public function index()
     {
-        $banks=Bank::paginate(5);
+        $banks=Bank::all();
         return view('dashboard.BankList',compact('banks',$banks));
     }
 
@@ -84,9 +84,26 @@ class BankController extends Controller
      * @param  \App\Models\Bank  $bank
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Bank $bank)
+    public function update(Request $request,  $id)
     {
-        //
+        
+        $validator = validator($request->all(),[
+            'name'=> ['required', 'unique:banks'],
+        ]);
+
+
+        if (! $validator->fails() ) {
+            Bank::find($id)->update([
+                'name' =>$request->name
+            ]);
+            alert()->success('The Update completed successfully.', 'Successfully');
+            return redirect()->back();
+           
+        }else{
+            alert()->error('The Update operation failed. ' ,'Failed');
+            return redirect()->back();
+
+        }
     }
 
     /**

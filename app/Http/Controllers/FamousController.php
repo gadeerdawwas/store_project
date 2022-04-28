@@ -15,7 +15,7 @@ class FamousController extends Controller
      */
     public function index()
     {
-        $famouses=Famous::paginate(5);
+        $famouses=Famous::all();
         return view('dashboard.famous',compact('famouses',$famouses));
     }
 

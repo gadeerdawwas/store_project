@@ -239,16 +239,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="">
-                            <div class="row">
-
-                                <div class="col-md-7 col-sm-7">
-                                    <div class="dataTables_paginate paging_bootstrap_full_number" id="sample_1_paginate">
-                                        {{ $famouses->links('pagination::bootstrap-4') }}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

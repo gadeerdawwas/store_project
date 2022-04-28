@@ -28,7 +28,9 @@ Route::post('company-register',[AuthController::class,'companyregister'])->name(
 Route::get('famous-register',[AuthController::class,'famousregisters'])->name('famousregisters');
 Route::post('famous-register',[AuthController::class,'famousregister'])->name('famousregister');
 
-Auth::routes();
+// Route::get('/send-mail', [AuthController::class, 'sendMail'])->name('sendMail');
+
+Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

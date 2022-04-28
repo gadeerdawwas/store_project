@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="{{ asset('auth/vendor/nucleo/css/nucleo.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('auth/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}"
         type="text/css">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <!-- Argon CSS -->
     <link rel="stylesheet" href="{{ asset('auth/css/argon.css?v=1.2.0') }}" type="text/css">
 </head>
@@ -68,6 +70,7 @@
     <!-- Main content -->
     <div class="main-content">
         <!-- Header -->
+        @include('sweet::alert')
 
         <!-- Page content -->
         <div class="container mt--8 pb-5">
@@ -180,9 +183,10 @@
                                         </div>
 
                                         <select name="bank_name" id="" class="form-control">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
+                                            @foreach ($banks as $bank)
+                                            <option value="{{$bank->name}}">{{$bank->name}}</option>
+                                            @endforeach
+                                           
                                         </select>
                                     </div>
                                 </div>
@@ -254,14 +258,7 @@
                                     </div>
                                 </div>
 
-                                {{-- <div class="form-group">
-                                    <div class="input-group input-group-merge input-group-alternative">
-
-                                        <textarea name="social_media_accounts" class="form-control" id="" cols="2"
-                                            rows="2">{{ old('social_media_accounts') }}</textarea>
-                                    </div>
-                                </div> --}}
-
+                            
 
 
                                 <div class="text-center">
