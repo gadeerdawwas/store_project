@@ -4,9 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
-    <meta name="author" content="Creative Tim">
-    <title>Argon Dashboard - Free Dashboard for Bootstrap 4</title>
+
+    <title>AKO</title>
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('auth/img/brand/favicon.png') }}" type="image/png">
     <!-- Fonts -->
@@ -37,7 +36,7 @@
                     <div class="row">
                         <div class="col-6 collapse-brand">
                             <a href="dashboard.html">
-                                <img src="../auth/img/brand/blue.png">
+                                <img src="{{ asset('assets/img/pogi.png') }}">
                             </a>
                         </div>
                         <div class="col-6 collapse-close">

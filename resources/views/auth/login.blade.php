@@ -16,7 +16,7 @@
     </section>
     <section class="login-content">
       <div class="logo">
-        <h1>Vali</h1>
+        <h2>AKO System Registered</h2>
       </div>
       <div class="login-box">
         <form method="POST" class="login-form" action="{{ route('login') }}">

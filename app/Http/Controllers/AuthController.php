@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
+use App\Mail\Registration;
 
 class AuthController extends Controller
 {
@@ -23,7 +24,6 @@ class AuthController extends Controller
             'store_owner' => ['required', 'string', 'max:255', 'unique:companies'],
             'username' => ['required', 'string', 'max:255', 'unique:companies'],
             'store_name' => ['required', 'string', 'max:255', 'unique:companies'],
-            'bank_IBAN' => ['required', 'string'],
             'phone' => ['required', 'string'],
             'password' => ['required', 'string', 'min:8'],
             ]);
@@ -37,23 +37,38 @@ class AuthController extends Controller
                     'store_name' =>  $request->store_name ,
                     'bank_IBAN' =>  $request->bank_IBAN ,
                     'phone' =>  $request->phone ,
-                   'password' =>  Hash::make($request->password),
+                    'password' =>  Hash::make($request->password),
                    ]);
                 
                 $Company = $Company->toArray();
-        
-                Mail::send('mail', $Company, function($message) use ($Company) {
-                    $message->to($Company['email']);
-                    $message->subject('AKO');
-                });
 
-                alert()->success('تمت عملية التسجيل بنجاح.', 'تهانينا');
+
+            //     $data = [
+            //         "store_owner" => $Company->store_owner,
+            //         "username" => $Company->username,
+            //         "store_name" => $Company->store_name,
+
+            //    ];
+            //    $emails = [
+
+            //     env("MAIL_FROM"),
+            //     $Company->email,
+            //    ];
+
+                // Mail::send(new Registration($data,$emails));
+
+                // Mail::send('mail', $Company, function($message) use ($Company) {
+                //     $message->to($Company['email']);
+                //     $message->subject('AKO');
+                // });
+
+                alert()->success('Registration completed successfully.', 'Thanks');
                 return redirect()->back();
 
                 
             } catch (\Throwable $th) {
                  
-            alert()->error('لم تتم عملية التسجيل', 'للأسف');
+            alert()->error('Registration has not been completed', 'Sorry');
             return redirect()->back();
             }
     }
@@ -93,23 +108,23 @@ class AuthController extends Controller
                   
                 $Famous = $Famous->toArray();
         
-                Mail::send('mail', $Famous, function($message) use ($Famous) {
-                    $message->to($Famous['email']);
-                    $message->subject('AKO');
-                });
+                // Mail::send('mail', $Famous, function($message) use ($Famous) {
+                //     $message->to($Famous['email']);
+                //     $message->subject('AKO');
+                // });
     
-                alert()->success('تمت عملية التسجيل بنجاح.', 'تهانينا');
+                alert()->success('Registration completed successfully.', 'Thanks');
                 return redirect()->back();
             } catch (\Throwable $th) {
                 return $th;
-            alert()->error('لم تتم عملية التسجيل', 'للأسف');
-            return redirect()->back();
+                alert()->error('Registration has not been completed', 'Sorry');
+                return redirect()->back();
             }
             
            
         }else{
           
-            alert()->error('لم تتم عملية التسجيل', 'للأسف');
+            alert()->error('Registration has not been completed', 'Sorry');
             return redirect()->back();
         }
     }

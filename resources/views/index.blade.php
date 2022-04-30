@@ -11,7 +11,7 @@
   <meta name="description" content="AKO" />
   <meta name="keywords" content="AKO" />
 
-  <title>TAWTHEEF - Jobs for everyone</title>
+  <title>AKO Time Registration</title>
   <!-- favicon -->
   <link rel="shortcut icon" href="{{asset('assets/img/fav-icon.png')}}" type="image/x-icon" />
   <!-- Bootstrap 4.5 -->

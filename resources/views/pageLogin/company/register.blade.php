@@ -4,9 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
-    <meta name="author" content="Creative Tim">
-    <title>Argon Dashboard - Free Dashboard for Bootstrap 4</title>
+
+    <title>AKO</title>
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('assets/img/pogi.png') }}" type="image/png">
     <!-- Fonts -->
@@ -37,7 +36,7 @@
                     <div class="row">
                         <div class="col-6 collapse-brand">
                             <a href="dashboard.html">
-                                <img src="../auth/img/brand/blue.png">
+                                <img src="{{ asset('assets/img/pogi.png') }}">
                             </a>
                         </div>
                         <div class="col-6 collapse-close">
@@ -81,7 +80,7 @@
 
                         <div class="card-body px-lg-5 py-lg-5">
                             <div class="text-center text-muted mb-4">
-                                <h2>إنشاء حساب شركة</h2>
+                                <h2>Register Company</h2>
                             </div>
                             <form method="POST" action="{{ route('companyregister') }}" method="POST">
                                 @csrf
@@ -95,7 +94,7 @@
                                         <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                     </div>
                                     <input class="form-control @error('email') is-invalid @enderror"
-                                        value="{{ old('email') }}" name="email" placeholder="ادخل الإيميل"
+                                        value="{{ old('email') }}" name="email" placeholder="Email"
                                         type="email">
 
                                     @error('email')
@@ -113,7 +112,7 @@
                                         </div>
                                         <input class="form-control @error('store_owner') is-invalid @enderror"
                                             value="{{ old('store_owner') }}" name="store_owner"
-                                            placeholder="ادخل اسم صاحب المتجر " type="text">
+                                            placeholder="Enter the name of the store owner " type="text">
                                         @error('store_owner')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -130,7 +129,7 @@
                                         </div>
                                         <input class="form-control @error('username') is-invalid @enderror"
                                             value="{{ old('username') }}" name="username"
-                                            placeholder="ادخل اسم المستخدم" type="text">
+                                            placeholder="Enter the username" type="text">
                                         @error('username')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -147,7 +146,7 @@
                                         </div>
                                         <input class="form-control @error('store_name') is-invalid @enderror"
                                             value="{{ old('store_name') }}" name="store_name"
-                                            placeholder="ادخل اسم المتجر" type="text">
+                                            placeholder="Enter the store name" type="text">
 
                                         @error('store_name')
                                             <span class="invalid-feedback" role="alert">
@@ -164,7 +163,7 @@
                                         </div>
                                         <input class="form-control @error('phone') is-invalid @enderror"
                                             value="{{ old('phone') }}" name="phone"
-                                            placeholder="ادخل رقم التلفون " type="text">
+                                            placeholder="Enter the phone number" type="text">
 
                                         @error('phone')
                                             <span class="invalid-feedback" role="alert">
@@ -183,7 +182,7 @@
                                         </div>
                                         <input class="form-control @error('bank_IBAN') is-invalid @enderror"
                                             value="{{ old('bank_IBAN') }}" name="bank_IBAN"
-                                            placeholder="ادخل  ايبان البنك" type="text">
+                                            placeholder=" Enter IBAN Bank , (Optionel)" type="text">
 
                                         @error('bank_IBAN')
                                             <span class="invalid-feedback" role="alert">
@@ -201,7 +200,7 @@
                                         </div>
                                         <input class="form-control @error('password') is-invalid @enderror"
                                             value="{{ old('password') }}" name="password"
-                                            placeholder="ادخل كلمة المرور" type="password">
+                                            placeholder="Enter the password" type="password">
                                         @error('password')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -215,7 +214,7 @@
 
 
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-primary "> إنشاء حساب شركة</button>
+                                    <button type="submit" class="btn btn-primary ">Register Now</button>
 
                                 </div>
                                 <br>

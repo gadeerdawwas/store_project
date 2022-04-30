@@ -4,9 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
-    <meta name="author" content="Creative Tim">
-    <title>Argon Dashboard - Free Dashboard for Bootstrap 4</title>
+
+    <title>AKO</title>
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('assets/img/pogi.png') }}" type="image/png">
     <!-- Fonts -->
@@ -37,7 +36,7 @@
                     <div class="row">
                         <div class="col-6 collapse-brand">
                             <a href="dashboard.html">
-                                <img src="../auth/img/brand/blue.png">
+                                <img src="{{ asset('assets/img/pogi.png') }}">
                             </a>
                         </div>
                         <div class="col-6 collapse-close">
@@ -81,7 +80,7 @@
 
                         <div class="card-body px-lg-5 py-lg-5">
                             <div class="text-center text-muted mb-4">
-                                <h2>إنشاء حساب مشهور</h2>
+                                <h2>Create a famous account</h2>
                             </div>
                             <form method="POST" action="{{route('famousregister')}}" method="POST">
                                 @csrf
@@ -93,7 +92,7 @@
                                         </div>
                                         <input class="form-control @error('first_name') is-invalid @enderror"
                                             value="{{ old('first_name') }}" name="first_name"
-                                            placeholder="ادخل الإسم الاول" type="text">
+                                            placeholder="Enter the first name" type="text">
 
                                         @error('first_name')
                                             <span class="invalid-feedback" role="alert">
@@ -110,7 +109,7 @@
                                         </div>
                                         <input class="form-control @error('last_name') is-invalid @enderror"
                                             value="{{ old('last_name') }}" name="last_name"
-                                            placeholder="ادخل الإسم الاخير" type="text">
+                                            placeholder="Enter the last name" type="text">
 
                                         @error('last_name')
                                             <span class="invalid-feedback" role="alert">
@@ -129,7 +128,7 @@
                                             <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                         </div>
                                         <input class="form-control @error('email') is-invalid @enderror"
-                                            value="{{ old('email') }}" name="email" placeholder="ادخل الإيميل"
+                                            value="{{ old('email') }}" name="email" placeholder="Enter the Email"
                                             type="email">
 
                                         @error('email')
@@ -146,7 +145,7 @@
                                             <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                         </div>
                                         <input class="form-control @error('phone') is-invalid @enderror"
-                                            value="{{ old('phone') }}" name="phone" placeholder="ادخل رقم التلفون"
+                                            value="{{ old('phone') }}" name="phone" placeholder="Enter the Phone Number"
                                             type="text">
 
                                         @error('phone')
@@ -165,7 +164,7 @@
                                         </div>
                                         <input class="form-control @error('bank_IBAN') is-invalid @enderror"
                                             value="{{ old('bank_IBAN') }}" name="bank_IBAN"
-                                            placeholder="ادخل  ايبان البنك" type="text">
+                                            placeholder="Enter IBAN Bank (Optionel)" type="text">
 
                                         @error('bank_IBAN')
                                             <span class="invalid-feedback" role="alert">
@@ -197,7 +196,7 @@
                                         </div>
                                         <input class="form-control @error('password') is-invalid @enderror"
                                             value="{{ old('password') }}" name="password"
-                                            placeholder="ادخل كلمة المرور" type="password">
+                                            placeholder="Enter the Password" type="password">
 
                                         @error('password')
                                             <span class="invalid-feedback" role="alert">
@@ -207,7 +206,7 @@
                                     </div>
                                 </div>
 
-                                <span style="float: right;"> حسابات التواصل الاجتماعي
+                                <span style="float: right;"> social media accounts
                                 </span>
                                 <div class="form-group">
                                     <div class="input-group input-group-merge input-group-alternative">
@@ -216,7 +215,7 @@
                                         </div>
                                         <input class="form-control @error('facebook') is-invalid @enderror"
                                             value="{{ old('facebook') }}" name="facebook"
-                                            placeholder="ادخل حساب الفيس بوك" type="facebook">
+                                            placeholder="Enter your Facebook account" type="facebook">
 
                                         @error('facebook')
                                             <span class="invalid-feedback" role="alert">
@@ -232,7 +231,7 @@
                                         </div>
                                         <input class="form-control @error('instagram') is-invalid @enderror"
                                             value="{{ old('instagram') }}" name="instagram"
-                                            placeholder="ادخل  حساب الانستجرام" type="instagram">
+                                            placeholder="Enter your Instagram account" type="instagram">
 
                                         @error('instagram')
                                             <span class="invalid-feedback" role="alert">
@@ -248,7 +247,7 @@
                                         </div>
                                         <input class="form-control @error('twitter') is-invalid @enderror"
                                             value="{{ old('twitter') }}" name="twitter"
-                                            placeholder="ادخل  حساب التويتر" type="twitter">
+                                            placeholder="Enter your Twitter account" type="twitter">
 
                                         @error('twitter')
                                             <span class="invalid-feedback" role="alert">
@@ -262,7 +261,7 @@
 
 
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-primary "> إنشاء حساب مشهور</button>
+                                    <button type="submit" class="btn btn-primary ">Create a famous account</button>
 
                                 </div>
                                 <br>
