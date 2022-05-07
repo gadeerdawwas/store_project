@@ -69,13 +69,6 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{{route('famousregisters')}}">Famous Registration</a>
                 </li>
-                <!-- <li class="nav-item">
-                  <select>
-<option value="1">العربية </option>
-<option value="2">English </option>
-                  </select>
-                </li> -->
-
               </ul>
               <div class="nav_account">
                 <a href="#" class="opacity-1 c-orange2 border-0 rounded-pill mt-10">
@@ -102,7 +95,7 @@
                   <h1 class="margin-b-2">
                     <span class="c-orange2">AKO</span> for everyone.
                   </h1>
-                  <p class="c-dark">Connect and be discovered Content Creators 
+                  <p class="c-dark">Connect and be discovered
                   </p>
                 </div>
                 <div class="button_app padding-t-3">
@@ -137,11 +130,6 @@
 
 
     </div>
-
-
-
-
-
 
     <!-- Start Section Loader -->
     <section class="loading_overlay">

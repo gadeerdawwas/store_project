@@ -88,8 +88,8 @@ class AuthController extends Controller
             'password' => ['required', 'string', 'min:8'],
             'phone' => ['required', 'string'],
             'instagram' => ['required', 'string'],
-            'facebook' => ['required', 'string'],
-            'twitter' => ['required', 'string'],
+            // 'facebook' => ['required', 'string'],
+            // 'twitter' => ['required', 'string'],
         ]);
         if (! $validator->fails()) {
             try {

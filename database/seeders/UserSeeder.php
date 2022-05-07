@@ -23,6 +23,13 @@ class UserSeeder extends Seeder
                 'role' => 'admin',
                 'status' => 1,
             ],
+            [
+                'name' => 'taher',
+                'email' => 'taher@akotime.com',
+                'password' => Hash::make('taher@admin'),
+                'role' => 'admin',
+                'status' => 1,
+            ],
 
 
         ];
