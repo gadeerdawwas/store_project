@@ -99,13 +99,12 @@
                   </p>
                 </div>
                 <div class="button_app padding-t-3">
-                  <a href="#" class="btn btn_with_ico rounded-pill">
+                  <a data-toggle="modal" data-target="#myModal" href="#" class="btn btn_with_ico rounded-pill">
                     <span>START YOUR REGISTRATION</span>
-
                   </a>
                   <div class="c-gray mt-4">
                     <span class="pr-1">Try the AKO app ❤️‍🔥 </span>
-                    <ul class="app-icons">
+                    <ul style="padding:1%" class="app-icons">
                       <li><a href="https://play.google.com/store/apps/details?id=com.akotime.ako"> <img
                             src="assets/img/play.png" width="150" /></a></li>
                       <li> <a href="https://apps.apple.com/in/app/ako-time/id1496699491?platform=iphone"> <img
@@ -124,8 +123,34 @@
         <!-- End. Banner -->
 
 
+         <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
 
-      </main>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('companyregisters')}}">Company Registration</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('famousregisters')}}">Famous Registration</a>
+          </li>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+  </main>
       <!-- end main -->
 
 
