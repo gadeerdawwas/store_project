@@ -29,6 +29,7 @@
                                         <th>Store Name</th>
                                         <th>IBAN Bank</th>
                                         <th>Status</th>
+                                        <th>Updated By</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -61,6 +62,7 @@
 
             
                                             </td>
+                                            <td>{{$company->updated_by}}</td>
 
 
                                         

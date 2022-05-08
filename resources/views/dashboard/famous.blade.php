@@ -28,8 +28,9 @@
                                         <th>Phone Number</th>
                                         <th>BANK Name</th>
                                         <th>IBAN Bank</th>
-                                        {{-- <th>Social Media Account</th> --}}
                                         <th>Status</th>
+                                        <th>Updated By  </th>
+
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -63,6 +64,7 @@
 
                                             </td>
 
+                                            <td>{{$famous->updated_by}}</td>
 
 
                                             <td>

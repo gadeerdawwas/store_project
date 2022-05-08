@@ -15,6 +15,7 @@
         type="text/css">
     <!-- Argon CSS -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="{{ asset('auth/css/argon.css?v=1.2.0') }}" type="text/css">
 </head>
@@ -88,6 +89,7 @@
 
 
                             <div class="form-group">
+                                <label for="">Email</label>
                                 <div class="input-group input-group-merge input-group-alternative mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-email-83"></i></span>
@@ -105,9 +107,10 @@
                             </div>
 
                                 <div class="form-group">
+                                    <label for="">Store Owner</label>
                                     <div class="input-group input-group-merge input-group-alternative">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                            <span class="input-group-text"><i class="fa-solid fa-store"></i></span>
                                         </div>
                                         <input class="form-control @error('store_owner') is-invalid @enderror"
                                             value="{{ old('store_owner') }}" name="store_owner"
@@ -122,9 +125,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label for="">Username</label>
                                     <div class="input-group input-group-merge input-group-alternative">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                            <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
                                         </div>
                                         <input class="form-control @error('username') is-invalid @enderror"
                                             value="{{ old('username') }}" name="username"
@@ -139,9 +143,10 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <label for="">Store Name</label>
                                     <div class="input-group input-group-merge input-group-alternative">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                            <span class="input-group-text"><i class="fa-solid fa-shop"></i></span>
                                         </div>
                                         <input class="form-control @error('store_name') is-invalid @enderror"
                                             value="{{ old('store_name') }}" name="store_name"
@@ -156,9 +161,10 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <label for="">Phone</label>
                                     <div class="input-group input-group-merge input-group-alternative">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                            <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
                                         </div>
                                         <input class="form-control @error('phone') is-invalid @enderror"
                                             value="{{ old('phone') }}" name="phone"
@@ -175,9 +181,12 @@
 
 
                                 <div class="form-group">
+                                    <label for=""> Bank IBAN</label>
                                     <div class="input-group input-group-merge input-group-alternative">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                            <span class="input-group-text">
+                                                <i class="ni ni-bold"></i>
+                                            </span>
                                         </div>
                                         <input class="form-control @error('bank_IBAN') is-invalid @enderror"
                                             value="{{ old('bank_IBAN') }}" name="bank_IBAN"
@@ -193,6 +202,7 @@
 
 
                                 <div class="form-group">
+                                    <label for="">Password</label>
                                     <div class="input-group input-group-merge input-group-alternative">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>

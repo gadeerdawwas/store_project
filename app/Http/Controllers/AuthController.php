@@ -87,7 +87,7 @@ class AuthController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
             'phone' => ['required', 'string'],
-            'instagram' => ['required', 'string'],
+            // 'instagram' => ['required', 'string'],
             // 'facebook' => ['required', 'string'],
             // 'twitter' => ['required', 'string'],
         ]);
@@ -101,7 +101,8 @@ class AuthController extends Controller
                     'bank_IBAN' => $request->bank_IBAN,
                     'bank_name' => $request->bank_name,
                     'instagram' => $request->instagram,
-                    'facebook' => $request->facebook,
+                    'snapchat' => $request->snapchat,
+                    'youtube' => $request->youtube,
                     'twitter' => $request->twitter,
                     'password' => Hash::make($request->password),
                 ]);

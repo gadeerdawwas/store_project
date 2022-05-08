@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{ asset('auth/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}"
         type="text/css">
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Argon CSS -->
     <link rel="stylesheet" href="{{ asset('auth/css/argon.css?v=1.2.0') }}" type="text/css">
 </head>
@@ -86,9 +86,11 @@
                                 @csrf
 
                                 <div class="form-group">
+                                    <label for="">First Name</label>
                                     <div class="input-group input-group-merge input-group-alternative mb-3">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                                            <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i>
+                                            </span>
                                         </div>
                                         <input class="form-control @error('first_name') is-invalid @enderror"
                                             value="{{ old('first_name') }}" name="first_name"
@@ -103,9 +105,12 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <label for="">Last Name</label>
+
                                     <div class="input-group input-group-merge input-group-alternative mb-3">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                                            <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i>
+                                            </span>
                                         </div>
                                         <input class="form-control @error('last_name') is-invalid @enderror"
                                             value="{{ old('last_name') }}" name="last_name"
@@ -123,6 +128,8 @@
 
 
                                 <div class="form-group">
+                                    <label for="">Email</label>
+
                                     <div class="input-group input-group-merge input-group-alternative mb-3">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-email-83"></i></span>
@@ -140,9 +147,11 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <label for="">Phone</label>
                                     <div class="input-group input-group-merge input-group-alternative">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                            <span class="input-group-text"><i class="fa fa-phone" aria-hidden="true"></i>
+                                            </span>
                                         </div>
                                         <input class="form-control @error('phone') is-invalid @enderror"
                                             value="{{ old('phone') }}" name="phone" placeholder="Enter the Phone Number"
@@ -158,9 +167,13 @@
 
 
                                 <div class="form-group">
+                                    <label for="">Bank IBAN</label>
                                     <div class="input-group input-group-merge input-group-alternative">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                            <span class="input-group-text">
+                                                
+                                                <i class="ni ni-bold"></i>
+                                            </span>
                                         </div>
                                         <input class="form-control @error('bank_IBAN') is-invalid @enderror"
                                             value="{{ old('bank_IBAN') }}" name="bank_IBAN"
@@ -176,9 +189,11 @@
 
 
                                 <div class="form-group">
+                                    <label for="">Bank Name</label>
                                     <div class="input-group input-group-merge input-group-alternative">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                            <span class="input-group-text"><i class="fa fa-university" aria-hidden="true"></i>
+                                            </span>
                                         </div>
 
                                         <select name="bank_name" id="" class="form-control">
@@ -190,6 +205,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label for=""> Password</label>
                                     <div class="input-group input-group-merge input-group-alternative">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
@@ -206,18 +222,24 @@
                                     </div>
                                 </div>
 
-                                <span style="float: right;"> social media accounts
+                                <span ><strong> Social Media Accounts</strong>
                                 </span>
+
                                 <div class="form-group">
+                                    <label for="">Youtube</label>
                                     <div class="input-group input-group-merge input-group-alternative">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                                        </div>
-                                        <input class="form-control @error('facebook') is-invalid @enderror"
-                                            value="{{ old('facebook') }}" name="facebook"
-                                            placeholder="Enter your Facebook account" type="facebook">
+                                            <span class="input-group-text">
+                                                <i class="fa-brands fa-youtube"></i>
 
-                                        @error('facebook')
+
+                                            </span>
+                                        </div>
+                                        <input class="form-control @error('youtube') is-invalid @enderror"
+                                            value="{{ old('youtube') }}" name="youtube"
+                                            placeholder="Enter your youtube account" type="youtube">
+
+                                        @error('youtube')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
@@ -225,9 +247,33 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label for="">Snapchat</label>
                                     <div class="input-group input-group-merge input-group-alternative">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                            <span class="input-group-text">
+                                                <i class="fa-brands fa-snapchat"></i>
+                                            </span>
+                                        </div>
+                                        <input class="form-control @error('snapchat') is-invalid @enderror"
+                                            value="{{ old('snapchat') }}" name="snapchat"
+                                            placeholder="Enter your snapchat account" type="snapchat">
+
+                                        @error('snapchat')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="">Instagram</label>
+                                    <div class="input-group input-group-merge input-group-alternative">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">
+                                                <i class="fa-brands fa-instagram"></i>
+                                            </span>
                                         </div>
                                         <input class="form-control @error('instagram') is-invalid @enderror"
                                             value="{{ old('instagram') }}" name="instagram"
@@ -241,9 +287,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label for="">Twitter</label>
                                     <div class="input-group input-group-merge input-group-alternative">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                            <span class="input-group-text">
+                                                <i class="fa-brands fa-twitter"></i>
+                                            </span>
                                         </div>
                                         <input class="form-control @error('twitter') is-invalid @enderror"
                                             value="{{ old('twitter') }}" name="twitter"

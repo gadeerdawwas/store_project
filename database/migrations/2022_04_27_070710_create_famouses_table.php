@@ -21,11 +21,13 @@ class CreateFamousesTable extends Migration
             $table->string('phone');
             $table->string('bank_IBAN')->nullable();
             $table->string('bank_name');
-            $table->text('facebook');
-            $table->text('instagram');
-            $table->text('twitter');
+            $table->text('youtube')->nullable();
+            $table->text('snapchat')->nullable();
+            $table->text('instagram')->nullable();
+            $table->text('twitter')->nullable();
             $table->string('password');
             $table->string('status')->default(0);
+            $table->string('updated_by')->nullable();
             $table->timestamps();
         });
     }

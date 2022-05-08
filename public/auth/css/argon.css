@@ -6273,6 +6273,9 @@ input[type='button'].btn-block
     background-color: #fff;
     background-clip: border-box;
 }
+.card form{
+    direction: ltr;
+}
 .card > hr
 {
     margin-right: 0;

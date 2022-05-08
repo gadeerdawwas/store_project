@@ -23,6 +23,7 @@ class CreateCompaniesTable extends Migration
             $table->string('bank_IBAN')->nullable();
             $table->string('password');
             $table->string('status')->default(0);
+            $table->string('updated_by')->nullable();
             $table->timestamps();
         });
     }

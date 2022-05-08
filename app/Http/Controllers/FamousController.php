@@ -72,7 +72,9 @@ class FamousController extends Controller
     public function update(Request $request,  $id)
     {
         Famous::find($id)->update([
-            'status' => $request->status
+            'status' => $request->status,
+            'updated_by' => auth()->user()->name
+
         ]);
         alert()->success('The Update was completed successfully.', 'Successfully');
         return redirect()->back();
